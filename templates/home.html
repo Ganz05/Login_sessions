@@ -1,0 +1,90 @@
+{% extends 'dummy.html' %}
+
+
+{% block title %}
+<title>Home Page</title>
+{% endblock %}
+{% block body_block %}
+<style>
+    div
+    {
+        position: relative;
+        top: 200px;
+        height: 220px;
+    }
+    div>span
+    {
+        background-color: red;
+        display:inline-block;
+        width: 10px;
+        height: 10px;
+        margin: 40px;
+        border-radius: 100%;
+        box-shadow: 0 0 10px white;
+
+        animation: k 1s linear 0s infinite normal;
+    }
+    div>span:first-child
+    {
+        background-color: red;
+        animation-delay: 0.1s;
+    }
+    div>span:nth-child(2)
+    {
+        background-color: blue;
+        animation-delay: 0.2s;
+    }
+    div>span:nth-child(3)
+    {
+        background-color: purple;
+        animation-delay: 0.3;
+    }
+    div>span:nth-child(4)
+    {
+        background-color: pink;
+        animation-delay:0.4;
+    }
+    div>span:nth-child(5)
+    {
+        background-color:yellow ;
+        animation-delay: 0.5;
+    }
+    div>span:last-child
+    {
+        background-color:green ;
+        animation-delay: 0.6;
+    }
+    @keyframes k
+    {
+        0%,100%
+        {
+            transform: scale(0.3,0.3);
+        }
+        50%
+        {
+            transform: scale(3,3);
+        }
+    }
+    
+</style>
+
+
+
+<center>
+    {% if un %}
+         <h1>Welcome To Home Page {{un}}</h1>
+    {% else %}
+        <h1>Welcome</h1>
+    {% endif %}
+
+    <div>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</center>
+
+{% endblock %}

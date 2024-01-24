@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>Document</title>
+    {% endblock %}
+    <style>
+        .one
+        {
+            background-color: aqua;
+            padding: 10px;
+            color: black;
+            display:flex;
+            justify-content: right;
+        }
+        .one>a
+        {
+            padding: 5px;
+        }
+        body
+        {
+            background-color: black;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+   <nav class="one">
+        <a href="{% url 'register' %}">Register</a>
+        <a href="{% url 'home' %}">Home Page</a>
+        <a href="{% url 'userlogin' %}">login</a>
+        
+   </nav> 
+
+   {% block body_block %}
+   {% endblock %}
+
+</body>
+</html>
